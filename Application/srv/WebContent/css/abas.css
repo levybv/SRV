@@ -1,0 +1,44 @@
+#tabnav {
+	width: 100%;	
+	margin: 0 auto;
+}
+ 
+#tabs {
+	height: 30px;
+	position: relative;
+	width: 100%;	 
+	text-align:center;
+}
+ 
+#conteudo {
+	position: relative;
+	padding: 20px;
+	border: 2px solid #E9EBE8;
+	height: 60%; 
+}
+ 
+#conteudo div p {
+	font-family: Tahoma, Arial, Verdana;
+	font-size: 1.9em;
+	
+}
+ 
+#tabs a, #tabs a:visited {
+	/*background: url(../images/panel-meio.png) repeat-x top center ;*/
+	background-color: #B3C9D0;
+	font-family: Tahoma, Arial, Verdana;
+	font-variant: small-caps;
+	text-decoration: none;
+	color: #75104C;
+	font-size: 1.0em;
+	font-weight: bold;
+	display: block;
+	width: auto;
+	height: 25px;
+	_height: 25px;
+	margin: 0px 1px 7px 0px;
+	text-align: center;
+	padding: 6px 0px 0px 7px;  
+	float: left;
+	
+}

@@ -1,0 +1,168 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+<script type="text/javascript" src="js/ms/nt.inicial.marisa.js" charset="ISO-8859-1"></script>
+
+<script type="text/javascript">
+	isItau = false;
+	<% if(null != request.getAttribute("dialog-confirm") && request.getAttribute("dialog-confirm").equals("S")) { %>
+		isItau = true;
+		<% request.setAttribute("dialog-confirm", null); %>
+	<% }%>
+</script>
+
+<script type="text/javascript" charset="ISO-8859-1">
+	$(document).ready(function() {
+	});
+</script>
+
+  <form id="form" name="form" method="post">     
+	<div class="boxIndex"> 
+				<div class="boxCenter">
+                                <br />
+                                <div id="" class="panel">
+
+                                    <div>
+                                        <div id="" class="barTitle">Calend�rio Comercial</div>
+                                    </div>
+
+                                    <div id="painel-interno">
+                                        <table class="tabelaComponente" cellpadding="2" cellspacing="2">
+                                            <tbody>
+                                            
+                                             	<tr>
+                                                  <td class="labelSemWidth" id="labelFilial">Filial de Origem:</td>
+                                                  <td class="componente">
+                                                   <c:choose>
+														<c:when test="${isQG == 'S'}">  
+						                 				 	<select id="filial" name="filial" class="campo" style="width:210px;">
+                                                       			<option value="" selected>[SELECIONE]</option> 
+                                                 				<c:forEach var="filial" items="${listaFiliais}">
+                                                 					<c:choose>
+	                                                 					<c:when test="${filial.filCod == codigoFilial}">  
+	                                                  						<option value="<c:out value="${filial.filCod}" />" selected><c:out value="${cargoItem.cargDescr}" /><c:out value="${filial.filNomeFanta}" /></option>
+	                                                  					</c:when>
+	                                                  					<c:otherwise>
+	                                                  						<option value="<c:out value="${filial.filCod}" />"><c:out value="${cargoItem.cargDescr}" /><c:out value="${filial.filNomeFanta}" /></option>
+	                                                  					</c:otherwise>
+                                                  					</c:choose>
+						                      					</c:forEach> 
+                                                   			</select>     			
+							                      		</c:when>  
+								                      	<c:otherwise>
+								                      		<c:forEach var="filial" items="${listaFiliais}">
+                                                				<input id="filial" name="filial" readonly="readonly" class="readonly" style="width:150px;" type="text" value="<c:out value="${filial.filNomeFanta}" />"/>
+                                                				<input id="filialQG" name="filialQG" type="hidden" value="<c:out value="${filial.filCod}" />"/>
+                                                			</c:forEach>
+								                      	</c:otherwise>
+							                      </c:choose>
+                                                  </td>
+                                              	</tr>
+   
+                                                <tr>
+                                                    <td class="labelSemWidth" id="labelCPF">CPF do Cliente:<span class="requerido">*</span></td>
+                                                    <td class="componente">
+                                                        <input id="cliCpf" name="cliCpf" class="campo" maxlength="14" style="width: 150px;" value="<c:out value="${cliCpf}" />" type="text"/>
+                                                    </td>
+                                                </tr> 
+                                               
+                                              <tr>
+                                                  <td class="labelSemWidth" id="labelTelefone">Telefone Residencial:<span class="requerido">*</span></td>
+                                                  <td class="componente">
+                                                      <input id="cliResFone" name="cliResFone" maxlength="14" size="15" class="campo" type="text" value="<c:out value="${cliResFone}" />" />
+                                                 </td>
+                                              </tr>
+
+                                              <tr> 
+                                                  <td class="labelSemWidth" id="labelClasse">Classe Profissional:<span class="requerido">*</span></td>
+                                                  <td class="componente">
+                                                      <select id="cargo" name="cargo" class="campo" style="width:140px;">
+                                                          <option value="" selected>[SELECIONE]</option> 
+		                                                  <c:forEach var="cargoItem" items="${listaCargos}">
+		                                                   <c:choose>
+																<c:when test="${cargoItem.cargCod == cargo}">  
+									                      			<option value="<c:out value='${cargoItem.cargCod}' />" selected><c:out value="${cargoItem.cargDescr}" /></option>
+									                      		</c:when>  
+										                      	<c:otherwise>
+										                      		<option value="<c:out value='${cargoItem.cargCod}' />"><c:out value="${cargoItem.cargDescr}" /></option>
+										                      	</c:otherwise>
+									                      	</c:choose> 
+									                      </c:forEach> 
+                                                      </select>
+
+                                                  </td>
+                                                  <td class="componente" style="float: left;">
+                                                      <img id="aguardeCargo" alt="Aguarde..." src="images/ajax-loader.gif">   
+                                                  </td>
+                                              </tr>
+                                              
+                                              <tr>
+                                              	<td class="labelSemWidth" id="labelClasse">Campanha:<span class="requerido">*</span></td>
+									            <td class="componente">
+								                	<select class="campo" id="cliCampCaptacao" name="cliCampCaptacao" style="vertical-align: middle;">
+						                               	<option value="" selected>[SELECIONE]</option> 
+					                                 	<c:forEach var="campanha" items="${listaCampanhas}">
+					                                 		<c:choose>
+																<c:when test="${cliCampCaptacao == campanha.numCampanhaFormatada}">  
+									                      			<option value="<c:out value='${campanha.carBin}' />#<c:out value='${campanha.numCampanha}' />" selected="selected"><c:out value="${campanha.descResumida}" /></option>
+									                      		</c:when>  
+										                      	<c:otherwise>
+										                      		<option value="<c:out value='${campanha.carBin}' />#<c:out value='${campanha.numCampanha}' />"><c:out value='${campanha.numCampanha}' /> - <c:out value="${campanha.descResumida}" /></option>
+										                      	</c:otherwise>
+									                      	</c:choose> 
+								                    	</c:forEach>
+							                        </select>
+									          	</td>
+									          </tr> 
+   
+                                          </tbody>
+                                      </table>
+										<div class="campos-requeridos">
+										(<span class="requerido">*</span>) Campos de Preenchimento Obrigatório 
+										</div>
+                                  </div> 
+                                     <div id="botao-geral">
+                                          <div id="botao" class="barBottom"> 
+                                            	<input id="botao-avancar" type="button" class="button" value="Avançar" />
+                                            	<span id="loadInicial" class="hideLoad">Processando... &nbsp;<img src="images/ajax-loader.gif">&nbsp;</span>   
+                                          </div>
+                                     </div> 
+                              </div>
+	</div>
+	<div id="mensagemDocumentos" class="mensagemDocumento"></div> 
+</div>
+		<br style="clear: both;" />
+		<br style="clear: both;" />
+		<br style="clear: both;" />
+	<input id="funcNome" name="funcNome" type="hidden" value="" />		
+</form>
+
+<!--[if IE 6]>
+	<script src="js/lib/DD_belatedPNG.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		  DD_belatedPNG.fix('img');
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if(isItau){
+				$(document).ready(function(){
+					modal(600,290,'paginas/modal/itau-select.jsp','Marisa - ItauCard',true,'',true);
+				});
+			}else{
+				$("#cliCpf").focus();
+			}
+		});
+	</script>
+<![endif]-->
+<!--[if gte IE 7]>
+	<script type="text/javascript">	
+		$(document).ready(function(){
+			if(isItau){
+				modal(600,290,'paginas/modal/itau-select.jsp','Marisa - ItauCard',true,'',true);
+			}else{
+				$("#cliCpf").focus();
+			}
+		});
+	</script>
+<![endif]-->

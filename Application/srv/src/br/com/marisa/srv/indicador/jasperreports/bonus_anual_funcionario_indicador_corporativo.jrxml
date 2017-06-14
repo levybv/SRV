@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bonus_anual_funcionario_indicador_corporativo" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="05d72e32-21fa-4bbf-855a-fcd6ffc22809">
+	<property name="ireport.zoom" value="2.1435888100000056"/>
+	<property name="ireport.x" value="302"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="TOTAL_CORP_VO" class="br.com.marisa.srv.indicador.vo.IndicadorFuncionarioRealizadoVO"/>
+	<field name="descricaoIndicador" class="java.lang.String"/>
+	<field name="pesoFormatado" class="java.lang.String"/>
+	<field name="metaFormatada" class="java.lang.String"/>
+	<field name="idIndicador" class="java.lang.Integer"/>
+	<field name="idEscala" class="java.lang.Integer"/>
+	<field name="formulaIndicador" class="java.lang.String"/>
+	<field name="descFonte" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="553" height="14" backcolor="#E2007F" uuid="69d7ab7a-b612-4b00-a663-435cdfece561"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="0" width="553" height="14" forecolor="#FFFFFF" uuid="d65717cd-ad4d-409c-b1ec-a00f1d7ac44e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quadro de Metas]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="1" y="29" width="160" height="15" backcolor="#E2007F" uuid="2d84470e-7b2b-413d-a8ff-ffaf88be182e"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="29" width="160" height="15" forecolor="#FFFFFF" uuid="dc058a99-50d4-4595-ad1c-465802d31840"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Indicador]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="160" y="29" width="60" height="15" backcolor="#E2007F" uuid="bdc8e5ad-baac-4ba2-9034-7569a34c16aa"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="160" y="29" width="60" height="15" forecolor="#FFFFFF" uuid="572057ac-1f9b-41de-b69c-4d709db59266"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="220" y="29" width="60" height="15" backcolor="#E2007F" uuid="d0c510eb-92bb-4aae-9c3a-12945f8bc31c"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="220" y="29" width="60" height="15" forecolor="#FFFFFF" uuid="af67ad7e-8015-4b21-a37d-05b9901a053c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Meta]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="280" y="29" width="40" height="15" backcolor="#E2007F" uuid="414d1b80-709c-47e0-aa92-932b4f40037d"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="280" y="29" width="40" height="15" forecolor="#FFFFFF" uuid="4fef6805-6906-4e8f-8e29-f92742a9c2fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Escala]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="320" y="29" width="234" height="15" backcolor="#E2007F" uuid="7bffa830-52d6-4604-bb08-0258047e8a11"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="320" y="29" width="234" height="15" forecolor="#FFFFFF" uuid="e75499e0-400f-4915-8a64-daed11f9697a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fórmula]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="1" y="14" width="553" height="15" backcolor="#E2007F" uuid="70f35907-f09b-4343-8703-6a52de65a977"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="14" width="553" height="15" forecolor="#FFFFFF" uuid="958cb454-9976-4df3-a190-c0ac5b2d7df3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Indicadores Coorporativos]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{idIndicador}!=null]]></printWhenExpression>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="159" height="24" uuid="8572dae1-38c6-4662-aef7-b724915a05ec"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="160" y="0" width="60" height="24" uuid="7f79fd6b-02e2-44ab-9df5-9590f0c825d8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="220" y="0" width="60" height="24" uuid="c5eb8856-e25f-4366-a94b-6335510ee5b2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="40" height="24" uuid="75ca7358-f8fd-468b-847b-83576a026cc0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="320" y="0" width="234" height="24" uuid="6e06abc6-6b05-463c-a23d-19b0a85aba40"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="0" width="160" height="24" uuid="ef3aa3a7-cfe7-4f01-bd36-7b88a9f77865"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6"/>
+					<paragraph leftIndent="3" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{descricaoIndicador}==null?"":$F{descricaoIndicador})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="220" y="0" width="60" height="24" uuid="9511a843-8ce1-422b-8dba-2bed345c0a4b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{metaFormatada}==null?"":$F{metaFormatada})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="280" y="0" width="40" height="24" uuid="d9878cfc-e788-470e-8632-45d3120aa933"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{idEscala}==null?"":$F{idEscala})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="160" y="0" width="60" height="24" uuid="5b6b34ba-f6f9-4dfb-a19e-f8e6d5137003"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{pesoFormatado}==null?"":$F{pesoFormatado})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="320" y="0" width="234" height="24" uuid="9f79aa43-1e65-43cd-bfa3-9deb39b4c648"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6"/>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{formulaIndicador}==null?"":$F{formulaIndicador})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="14">
+			<printWhenExpression><![CDATA[($P{TOTAL_CORP_VO} != null && $P{TOTAL_CORP_VO}.getDescricaoIndicador() != null)]]></printWhenExpression>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="159" height="14" uuid="763a43b6-2ee6-4206-8589-9250eefbc191"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="160" y="0" width="60" height="14" uuid="103e4f85-46bb-46e7-8e7d-838ba6b169c8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="220" y="0" width="60" height="14" uuid="78754408-209a-4003-90d4-4553c999c2e6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="40" height="14" uuid="19f7795b-e6f1-4f24-b72b-bcd56a933766"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="320" y="0" width="234" height="14" uuid="97f55f42-73b8-4f8e-b670-c9dd5baca3f4"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="0" width="160" height="14" uuid="c3db783b-9db5-4c02-a8be-166dede9c7df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{TOTAL_CORP_VO}.getDescricaoIndicador()==null?"":$P{TOTAL_CORP_VO}.getDescricaoIndicador())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="160" y="0" width="60" height="14" uuid="fec294a1-cae1-4e76-a988-3d8ea3a861b9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{TOTAL_CORP_VO}.getPesoFormatado()==null?"":$P{TOTAL_CORP_VO}.getPesoFormatado())]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

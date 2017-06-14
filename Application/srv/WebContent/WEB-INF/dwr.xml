@@ -1,0 +1,148 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+    "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+  <allow>
+    <create creator="new" javascript="JDate">
+      <param name="class" value="java.util.Date"/>
+    </create>
+	<create creator="new" javascript="FilialBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.filial.business.FilialBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="GerenteFilialBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.gerente.filial.business.GerenteFilialBusinessAjax"/>
+    </create>
+    <create creator="new" javascript="GrupoIndicadorBusinessAjax">
+	     <param name="class" value="br.com.marisa.srv.grupoindicador.business.GrupoIndicadorBusinessAjax"/>    
+    </create>     
+    <create creator="new" javascript="IndicadorBusinessAjax">
+	     <param name="class" value="br.com.marisa.srv.indicador.business.IndicadorBusinessAjax"/>    
+    </create> 													   
+    <create creator="new" javascript="PerfilBusinessAjax">
+	     <param name="class" value="br.com.marisa.srv.perfil.business.PerfilBusinessAjax"/>    
+    </create> 
+    <create creator="new" javascript="UsuarioBusinessAjax">
+	     <param name="class" value="br.com.marisa.srv.usuario.business.UsuarioBusinessAjax"/>    
+    </create> 												   
+	<create creator="new" javascript="ClasseHayBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.classehay.business.ClasseHayBusinessAjax"/>
+    </create> 	
+	<create creator="new" javascript="CargoBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.cargo.business.CargoBusinessAjax"/>
+    </create>   
+	<create creator="new" javascript="GrupoRemuneracaoVariavelBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.gpremuneracaovariavel.business.GrupoRemuneracaoVariavelBusinessAjax"/>
+    </create>       												   
+	<create creator="new" javascript="UnidadeBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.unidade.business.UnidadeBusinessAjax"/>
+    </create>       												   
+	<create creator="new" javascript="PonderacaoBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.ponderacao.business.PonderacaoBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="CalendarioComercialBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.calendario.business.CalendarioComercialBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="CalendarioBonusBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.calendario.business.CalendarioBonusBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="FuncionarioBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.funcionario.business.FuncionarioBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="MetaFilialBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.meta.business.MetaFilialBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="MetaFuncionarioBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.meta.business.MetaFuncionarioBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="EscalaBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.escala.business.EscalaBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="FaixaEscalaBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.escala.business.FaixaEscalaBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="SalarioBaseBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.funcionario.business.SalarioBaseBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="AgendamentoBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.agendamento.business.AgendamentoBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="ProcessoPeriodoBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.processo.business.ProcessoPeriodoBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="ProcessoBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.processo.business.ProcessoBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="RelatorioCampanhaBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.relatorio.business.RelatorioCampanhaBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="RelatorioTipoBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.relatorio.business.RelatorioTipoBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="RelatorioBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.relatorio.business.RelatorioBusinessAjax"/>
+    </create>
+    <create creator="new" javascript="MetaLiderBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.meta.business.MetaLiderBusinessAjax"/>
+    </create>
+	<create creator="new" javascript="RelatorioCallCenterBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.relatorio.business.RelatorioCallCenterBusinessAjax"/>
+    </create>
+
+    <create creator="new" javascript="DataBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.util.business.DataBusinessAjax"/>
+    </create>
+    <create creator="new" javascript="RealizFuncIndicadorBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.bonus.business.RealizFuncIndicadorBusinessAjax"/>
+    </create>
+    <create creator="new" javascript="TelemarketingBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.tlmkt.business.TelemarketingBusinessAjax"/>
+    </create>
+     <create creator="new" javascript="ConfiguracaoBonusBusinessAjax">
+      <param name="class" value="br.com.marisa.srv.bonus.configuracao.business.ConfiguracaoBonusBusinessAjax"/>
+    </create>
+   
+
+    <convert match="br.com.marisa.srv.calendario.vo.PeriodoCalendarioVO" 	        			converter="bean" />
+    <convert match="br.com.marisa.srv.filial.vo.FilialVO"  										converter="bean" />
+    <convert match="br.com.marisa.srv.indicador.vo.IndicadorVO"  								converter="bean" />
+    <convert match="br.com.marisa.srv.perfil.vo.PerfilVO"  			        					converter="bean" />
+    <convert match="br.com.marisa.srv.acesso.vo.ModuloVO"  			        					converter="bean" />
+    <convert match="br.com.marisa.srv.acesso.vo.TipoAcessoVO"  			    					converter="bean" />
+    <convert match="br.com.marisa.srv.acesso.vo.FuncionalidadeVO"  	        					converter="bean" />
+    <convert match="br.com.marisa.srv.acesso.vo.AcessoVO"  	         							converter="bean" />
+    <convert match="br.com.marisa.srv.usuario.vo.UsuarioVO"  		        					converter="bean" />
+    <convert match="br.com.marisa.srv.classehay.vo.ClasseHayVO"  		    					converter="bean" />
+    <convert match="br.com.marisa.srv.cargo.vo.CargoVO"  		    							converter="bean" />
+    <convert match="br.com.marisa.srv.gpremuneracaovariavel.vo.GrupoRemuneracaoVariavelVO"  	converter="bean" />
+    <convert match="br.com.marisa.srv.indicador.vo.DetalheCalculoVO"  							converter="bean" />    
+    <convert match="br.com.marisa.srv.indicador.vo.DetalheCalculoLojaVO"						converter="bean" />    
+    <convert match="br.com.marisa.srv.indicador.vo.DadosIndicadorVO"  							converter="bean" />    
+    <convert match="br.com.marisa.srv.ponderacao.vo.PonderacaoVO"  								converter="bean" />    
+    <convert match="br.com.marisa.srv.unidade.vo.UnidadeVO"  									converter="bean" />    
+    <convert match="br.com.marisa.srv.grupoindicador.vo.GrupoIndicadorVO"  						converter="bean" />    
+    <convert match="br.com.marisa.srv.indicador.vo.IndicadorFuncionarioRealizadoVO"  			converter="bean" />    
+	<convert match="br.com.marisa.srv.indicador.vo.IndicadorPeriodoVO"  						converter="bean" />    
+	<convert match="br.com.marisa.srv.funcionario.vo.FuncionarioVO"  							converter="bean" />    
+	<convert match="br.com.marisa.srv.meta.vo.MetaFilialVO"  									converter="bean" />    
+	<convert match="br.com.marisa.srv.meta.vo.MetaFuncionarioVO"  								converter="bean" />    
+	<convert match="br.com.marisa.srv.escala.vo.EscalaVO"  										converter="bean" />    
+	<convert match="br.com.marisa.srv.escala.vo.FaixaEscalaVO"  								converter="bean" />    
+	<convert match="br.com.marisa.srv.funcionario.vo.SalarioBaseVO"  							converter="bean" />    
+	<convert match="br.com.marisa.srv.processo.vo.ProcessoVO"  									converter="bean" />    
+    <convert match="br.com.marisa.srv.calendario.vo.PeriodoCalendarioVO"  						converter="bean" />   
+    <convert match="br.com.marisa.srv.agendamento.vo.AgendamentoVO"		  						converter="bean" />   
+    <convert match="br.com.marisa.srv.calendario.vo.CalendarioBonusVO"	  						converter="bean" />   
+    <convert match="br.com.marisa.srv.gerente.filial.vo.GerenteVO"		  						converter="bean" />
+    <convert match="br.com.marisa.srv.campanha.vo.CampanhaVO" 	      				  			converter="bean" />
+    <convert match="br.com.marisa.srv.relatorio.vo.RelatorioTipoVO"    				  			converter="bean" />
+    <convert match="br.com.marisa.srv.relatorio.vo.RelatorioVO"	    				  			converter="bean" />
+    <convert match="br.com.marisa.srv.bonus.configuracao.vo.ConfiguracaoBonusVO"	  			converter="bean" />
+    <convert match="br.com.marisa.srv.tlmkt.vo.TelemarketingVO"						  			converter="bean" />
+    <convert match="br.com.marisa.srv.tlmkt.vo.TelemarketingIndicadorVO"			  			converter="bean" />
+
+	<convert match="br.com.marisa.srv.util.vo.MesVO" 	        								converter="bean" />
+	<convert match="br.com.marisa.srv.util.vo.PeriodoMesAnoVO"     								converter="bean" />
+
+  </allow>
+</dwr>

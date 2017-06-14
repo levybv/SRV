@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_1158933872553" version="2.4">
+	<display-name>Sistema de Remuneração Variável</display-name>
+	<servlet>
+		<display-name>DWR Servlet</display-name>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>crossDomainSessionSecurity</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>chainConfig</param-name>
+			<param-value>org/apache/struts/tiles/chain-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>definitions-config</param-name>
+			<param-value>/WEB-INF/tiles-defs.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<display-name>Upload Meta de Filiais</display-name>
+		<servlet-name>UploadMetaFilial</servlet-name>
+		<servlet-class>br.com.marisa.srv.meta.action.UploadMetaFilialServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Upload Realizado Filial</display-name>
+		<servlet-name>UploadRealizFilialIndic</servlet-name>
+		<servlet-class>br.com.marisa.srv.filial.realizado.action.UploadRealizFilialIndic</servlet-class>
+	</servlet>
+
+	<servlet>
+		<display-name>Upload Meta de Funcionários</display-name>
+		<servlet-name>UploadMetaFuncionario</servlet-name>
+		<servlet-class>br.com.marisa.srv.meta.action.UploadMetaFuncionarioServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Upload Salário Base</display-name>
+		<servlet-name>UploadSalarioBaseServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.funcionario.action.UploadSalarioBaseServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Upload Agrupa Filiais</display-name>
+		<servlet-name>UploadAgrupaFilialServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.funcionario.action.UploadAgrupaFilialServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Upload Funcionário</display-name>
+		<servlet-name>UploadFuncionarioServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.funcionario.action.UploadFuncionarioServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Upload Digitalizados</display-name>
+		<servlet-name>UploadDigitalizadoServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.digitalizado.action.UploadDigitalizadoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Upload Ajuste Funcionário</display-name>
+		<servlet-name>UploadAjusteServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.ajuste.action.UploadAjusteServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Upload Bonus Funcionário</display-name>
+		<servlet-name>UploadBonusFuncionarioServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.funcionario.action.UploadBonusFuncionarioServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Relatório Loja</display-name>
+		<servlet-name>RelatorioLojaServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.relatorio.servlet.RelatorioLojaServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Relatório Sax</display-name>
+		<servlet-name>RelatorioSaxServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.relatorio.servlet.RelatorioSaxServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Relatório Vm</display-name>
+		<servlet-name>RelatorioVmServlet</servlet-name>
+		<servlet-class>br.com.marisa.srv.relatorio.servlet.RelatorioVmServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadBonusFuncionarioServlet</servlet-name>
+		<url-pattern>/servlet/uploadBonusFuncionarioServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RelatorioVmServlet</servlet-name>
+		<url-pattern>/servlet/relatorioVmServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RelatorioSaxServlet</servlet-name>
+		<url-pattern>/servlet/relatorioSaxServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RelatorioLojaServlet</servlet-name>
+		<url-pattern>/servlet/relatorioLojaServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/srvdwr/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadMetaFilial</servlet-name>
+		<url-pattern>/servlet/uploadMetaFilialServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadRealizFilialIndic</servlet-name>
+		<url-pattern>/servlet/uploadRealizFilialIndic</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadMetaFuncionario</servlet-name>
+		<url-pattern>/servlet/uploadMetaFuncionarioServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadSalarioBaseServlet</servlet-name>
+		<url-pattern>/servlet/uploadSalarioBaseServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadAgrupaFilialServlet</servlet-name>
+		<url-pattern>/servlet/uploadAgrupaFilialServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadFuncionarioServlet</servlet-name>
+		<url-pattern>/servlet/uploadFuncionarioServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadDigitalizadoServlet</servlet-name>
+		<url-pattern>/servlet/uploadDigitalizadoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadAjusteServlet</servlet-name>
+		<url-pattern>/servlet/uploadAjusteServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+	<session-config>
+		<session-timeout>300</session-timeout>
+	</session-config>
+</web-app>

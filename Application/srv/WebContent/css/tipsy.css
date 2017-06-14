@@ -1,0 +1,49 @@
+.tipsy {
+	padding: 5px;
+	font-size: 10px;
+	background-repeat: no-repeat;
+	background-image: url(../images/tipsy.gif);
+	z-index:3000;
+}
+
+.tipsy-inner {
+	padding: 5px 8px 4px 8px;
+	background-color: #F1D1D0;
+	font-weight: bolder;
+	color: #333;
+	max-width: 200px;
+	text-align: center;
+	z-index:3000;
+}
+
+.tipsy-inner {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0px 0px 3px #b3c9d0;
+	-webkit-box-shadow: 0px 0px 3px #b3c9d0;
+	box-shadow: 0px 0px 3px #b3c9d0;
+	border: 1px solid #b3c9d0;
+	z-index:3000;
+}
+
+.tipsy-north {
+	background-position: top center;
+	z-index:3000;
+}
+
+.tipsy-south {
+	background-position: bottom center;
+	z-index:3000;
+}
+
+.tipsy-east {
+	background-position: right center;
+	z-index:3000;
+}
+
+.tipsy-west {
+	background-position: left center;
+	z-index:3000;
+}
+/*opacity: 0.8; filter: alpha(opacity=100);*/

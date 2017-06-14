@@ -1,0 +1,15 @@
+#header {
+	display: none; 
+}
+
+.barTitle {
+	margin: 0px;
+	font: bold 1.0em Tahoma, Arial, Helvetica, sans-serif;
+	color: #75104C;
+	text-indent: 8px;
+	padding-top: 5px;
+	height: 17px;
+	font-variant: small-caps;
+	vertical-align: middle;
+	border: none; 
+} 

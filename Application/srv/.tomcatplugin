@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcatProjectProperties>
+    <rootDir>/WebContent</rootDir>
+    <exportSource>false</exportSource>
+    <reloadable>true</reloadable>
+    <redirectLogger>false</redirectLogger>
+    <updateXml>true</updateXml>
+    <warLocation></warLocation>
+    <extraInfo>%3CResource+name%3D%22jdbc%2Fsrv%22+auth%3D%22Container%22+type%3D%22javax.sql.DataSource%22%2F%3E+%0D%0A%3CResourceParams+name%3D%22jdbc%2Fsrv%22%3E%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3Efactory%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3Eorg.apache.commons.dbcp.BasicDataSourceFactory%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E+%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3EdriverClassName%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3Eoracle.jdbc.driver.OracleDriver%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E+%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3Eurl%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3Ejdbc%3Aoracle%3Athin%3A%40128.1.30.150%3A1521%3Accmdes%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E%09%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3Eusername%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3Esrv%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3Epassword%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3Expto%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E+%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3EmaxActive%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3E20%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3EmaxIdle%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3E10%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3EmaxWait%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3E-1%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3EremoveAbandoned%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3Etrue%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3EremoveAbandonedTimeout%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3E3000%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E%0D%0A%09%3Cparameter%3E%0D%0A%09%09%3Cname%3ElogAbandoned%3C%2Fname%3E%0D%0A%09%09%3Cvalue%3Etrue%3C%2Fvalue%3E%0D%0A%09%3C%2Fparameter%3E%0D%0A%3C%2FResourceParams%3E</extraInfo>
+    <webPath>/srv</webPath>
+    <webClassPathEntries>
+        <webClassPathEntry>/SRV/WebContent/WEB-INF/lib/displaytag-1.2.jar</webClassPathEntry>
+        <webClassPathEntry>/SRV/bin</webClassPathEntry>
+    </webClassPathEntries>
+</tomcatProjectProperties>

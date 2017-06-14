@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bonus_anual_funcionario_indicador_total" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="05d72e32-21fa-4bbf-855a-fcd6ffc22809">
+	<property name="ireport.zoom" value="2.1435888100000056"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="TOTAL_REALZ_VO" class="br.com.marisa.srv.indicador.vo.IndicadorFuncionarioRealizadoVO"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15">
+			<rectangle>
+				<reportElement x="1" y="0" width="553" height="15" backcolor="#E2B2C6" uuid="67c4e44a-7892-4982-b7d8-62fab7c02be5"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="1" y="0" width="160" height="15" forecolor="#000000" uuid="89defab3-689a-4ee2-84de-ba9f6ed4cfe4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_REALZ_VO}.getDescricaoIndicador()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="160" y="0" width="60" height="15" forecolor="#000000" uuid="e3fd6372-1aa0-454a-9dc9-9b0aba5a6152"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_REALZ_VO}.getPesoFormatado()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

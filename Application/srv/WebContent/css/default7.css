@@ -1,0 +1,26 @@
+.barTitle img {
+	margin: 0px;
+	text-indent: 8px;
+	margin-top: -15px;
+	background-color: #B3C9D9; 
+	vertical-align: middle;
+}
+
+span.pagelinks {
+	margin-top: -5px;
+	padding-bottom: 15px;
+	padding-top: 0px;
+	vertical-align: bottom;
+} 
+
+select.camposelect { 
+	margin-top: -10px; 
+} 
+
+.textoRight {
+	text-align:right;
+}
+
+.textoLeft {
+	text-align:left;
+}

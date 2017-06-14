@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bonus_anual_funcionario" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6b3768c-318c-46a7-b3ec-f4e48023d8e6">
+	<property name="ireport.zoom" value="1.2100000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="RelatorioBonusAnualFuncionarioVO" class="br.com.marisa.srv.funcionario.report.vo.RelatorioBonusAnualFuncionarioVO"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pathImages" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="112" splitType="Stretch">
+			<image scaleImage="RealHeight" hAlign="Center" vAlign="Middle" isUsingCache="false" isLazy="true">
+				<reportElement isPrintRepeatedValues="false" x="0" y="3" width="100" height="35" uuid="f371ee0b-6dcc-4f48-b962-f29c563a1e4c"/>
+				<imageExpression><![CDATA[$P{pathImages}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="100" y="0" width="455" height="35" forecolor="#736343" uuid="f424ee18-bedc-46e0-af24-6d575f758a96"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contrato de Metas]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="40" width="455" height="25" forecolor="#E2007F" uuid="bd5f1955-e1c1-4edb-9154-eafc0954c18a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ano " + $P{RelatorioBonusAnualFuncionarioVO}.getAnoBase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="74" width="78" height="18" forecolor="#736343" uuid="4e394704-8dcb-4d4d-bc2d-1d0b9cdbf959"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Matrícula:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="78" y="74" width="140" height="18" uuid="85454867-f13f-4e4d-bd7b-0051ddddd134"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getIdFuncionario()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="92" width="78" height="18" forecolor="#736343" uuid="daeac724-e5dc-4b63-aa8e-2a4eec0fc004"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="78" y="92" width="477" height="18" uuid="c4aa2cd1-6b03-40d2-9df3-7fe43253a3fe"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getNomeFuncionario()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="218" y="74" width="78" height="18" forecolor="#736343" uuid="0c5218e8-e575-4dbf-b3d9-dd76267cf661"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Cargo:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="295" y="74" width="260" height="18" uuid="b8bcd14b-9eec-48d5-9e31-fcdcd9e2e37c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getCargo()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="1bab5c5e-9827-4dcf-bd2c-1a7cc34f0992"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TOTAL_CORP_VO">
+					<subreportParameterExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getTotalCorporativoRealizadoVO()]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{RelatorioBonusAnualFuncionarioVO}.getIndicadoresCorporativos())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["bonus_anual_funcionario_indicador_corporativo.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Immediate">
+			<printWhenExpression><![CDATA[($P{RelatorioBonusAnualFuncionarioVO}.getIndicadoresIndividuais()!=null && $P{RelatorioBonusAnualFuncionarioVO}.getIndicadoresIndividuais().size()>0)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="a4fa0c4c-7dd9-4a1c-9693-a30dd8107340"/>
+				<subreportParameter name="TOTAL_INDIV_VO">
+					<subreportParameterExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getTotalIndividualRealizadoVO()]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{RelatorioBonusAnualFuncionarioVO}.getIndicadoresIndividuais())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["bonus_anual_funcionario_indicador_individual.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20" uuid="38f490cc-0e67-4edb-b2e7-d069bbd28ec3"/>
+				<subreportParameter name="TOTAL_REALZ_VO">
+					<subreportParameterExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getTotalRealizadoVO()]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA["bonus_anual_funcionario_indicador_total.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="15" uuid="6e567f16-823f-4267-aa9b-504ae29c1998"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="15" uuid="a1ad93eb-bcfd-4038-a1f6-88f199b7949d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="141">
+			<textField>
+				<reportElement x="435" y="126" width="80" height="15" uuid="3c954667-d0c0-43b4-a48f-4937e15eeb03"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="126" width="40" height="15" uuid="553189aa-7ca1-43aa-8c71-26077535cf29"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="55" uuid="6a9028e4-3af8-483f-927c-f17fd5ae7573"/>
+				<textElement>
+					<paragraph leftIndent="2" rightIndent="2" spacingBefore="2" spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getTextoConsentimento()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="55" width="555" height="18" uuid="b9104f01-87c3-47c3-b72c-f9440f17fa51"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getIdFuncionario() + " - " +
+$P{RelatorioBonusAnualFuncionarioVO}.getNomeFuncionario()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="0" y="95" width="555" height="15" uuid="5a195822-6c7d-4bc7-aa94-d75d718457d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RelatorioBonusAnualFuncionarioVO}.getTextoAprovacao()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+									"http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+
+	<!-- 
+		======================================================= 
+		SRV - Sistema de Remuneração Variável
+		=======================================================
+	-->
+	<definition name="page.login" path="/paginas/layout/padraoHome.jsp">
+		<put name="titulo" value="SRV - Sistema de Remuneração Variável" />
+		<put name="conteudo" value="/paginas/principal/login.jsp" />  
+		<put name="footer" value="/paginas/layout/footer.jsp"/>
+	</definition>
+	<definition name="page.alteracaoSenha" path="/paginas/layout/padraoHome.jsp">
+		<put name="titulo" value="SRV - Sistema de Remuneração Variável" />
+		<put name="conteudo" value="/paginas/principal/alteracaoSenha.jsp" />  
+		<put name="footer" value="/paginas/layout/footer.jsp"/>
+	</definition>
+	<definition name="page" path="/paginas/layout/padrao.jsp">
+		<put name="titulo" value="SRV - Sistema de Remuneração Variável" />
+		<put name="conteudo" value="" />  
+		<put name="footer" value="/paginas/layout/footer.jsp"/>
+	</definition>	
+	<definition name="page.erro" path="/paginas/layout/padrao.jsp">
+		<put name="titulo" value="SRV - Erro" />
+		<put name="conteudo" value="/paginas/erro/erro.jsp" />
+		<put name="footer" value="/paginas/layout/footer.jsp"/>
+	</definition>	
+	<definition name="page.inicial" extends="page">
+		<put name="conteudo" value="/paginas/principal/inicial.jsp" />  
+	</definition>
+
+
+	<!-- CONTROLE DE ACESSO -->
+	<definition name="page.perfil" extends="page">
+		<put name="conteudo" value="/paginas/perfil/perfil.jsp" />  
+	</definition>
+	<definition name="page.usuario" extends="page">
+		<put name="conteudo" value="/paginas/usuario/usuario.jsp" />  
+	</definition>
+
+	<!-- RELATORIOS -->
+	<definition name="page.indicadores" extends="page">
+		<put name="conteudo" value="/paginas/indicador/indicadores.jsp" />  
+	</definition>
+	<definition name="page.digitalizado" extends="page">
+		<put name="conteudo" value="/paginas/digitalizado/digitalizado.jsp" />  
+	</definition>
+	<definition name="page.ajusteFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/ajuste/ajusteFuncionario.jsp" />  
+	</definition>
+	<definition name="page.detalheAjusteFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/ajuste/detalheAjuste.jsp" />  
+	</definition>
+	<definition name="page.funcionario" extends="page">
+		<put name="conteudo" value="/paginas/funcionario/funcionario.jsp" />  
+	</definition>	
+	<definition name="page.extratoFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/funcionario/extratoFuncionario.jsp" />  
+	</definition>	
+	<definition name="page.bonusFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/bonus/funcionario.jsp" />  
+	</definition>	
+	<definition name="page.bonusExtratoFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/bonus/extratoFuncionario.jsp" />  
+	</definition>
+	<definition name="page.bonusAnualFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/bonusAnual/funcionario.jsp" />  
+	</definition>
+	<definition name="page.bonusAnualIndicadorFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/bonusAnual/indicadorFuncionario.jsp" />  
+	</definition>
+	<definition name="page.bonusAnualIndicadorFuncionarioSimulacao" extends="page">
+		<put name="conteudo" value="/paginas/bonusAnual/simulaBonusFuncionario.jsp" />  
+	</definition>
+	<definition name="page.cargoBonus" extends="page">
+		<put name="conteudo" value="/paginas/cargo/bonusCargo.jsp" />  
+	</definition>	
+	<definition name="page.grupoRemVarBonus" extends="page">
+		<put name="conteudo" value="/paginas/grupoRemVar/bonusGrupoRemVar.jsp" />  
+	</definition>
+	<definition name="page.pagamentoBonus" extends="page">
+		<put name="conteudo" value="/paginas/bonus/pagamentoBonus.jsp" />  
+	</definition>			
+	<definition name="page.conferenciaBonus" extends="page">
+		<put name="conteudo" value="/paginas/bonus/conferenciaBonus.jsp" />  
+	</definition>			
+	<definition name="/page.desempenhoBonus" extends="page">
+		<put name="conteudo" value="/paginas/bonus/desempenhoBonus.jsp" />  
+	</definition>			
+	<definition name="page.relatorioLoja" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioLoja.jsp" />  
+	</definition>
+	<definition name="page.relatorioCallCenter" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioCallCenter.jsp" />  
+	</definition>
+	<definition name="page.relatorioCallCenterRealizado" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioCallCenterRealizado.jsp" />  
+	</definition>
+	<definition name="page.relatorioSax" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioSax.jsp" />  
+	</definition>
+	<definition name="page.relatorioCampanha" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioCampanha.jsp" />  
+	</definition>
+	<definition name="page.relatorioVm" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioVm.jsp" />  
+	</definition>
+
+	<definition name="page.relatorioDinamico" extends="page">
+		<put name="conteudo" value="/paginas/relatorioDinamico/relatorioDinamico.jsp" />  
+	</definition>
+
+	<definition name="page.logProcesso" extends="page">
+		<put name="conteudo" value="/paginas/processo/logProcesso.jsp" />  
+	</definition>
+		
+	<definition name="page.relatorioBonusStatus" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioBonusStatus.jsp" />  
+	</definition>	
+	
+	<!-- Novos relatorios -->
+	
+	<definition name="page.relatorioBonusPagamento" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioBonusPagamento.jsp" />  
+	</definition>
+	
+		<definition name="page.relatorioBonusPagamentoProporcionalidade" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioBonusPagamentoProporcionalidade.jsp" />  
+	</definition>
+	
+	<definition name="page.relatorioBonusConferencia" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioBonusConferencia.jsp" />  
+	</definition>
+
+	<definition name="page.relatorioDesempenhoColaborador" extends="page">
+		<put name="conteudo" value="/paginas/relatorio/relatorioDesempenhoColaborador.jsp" />  
+	</definition>
+	
+	
+	<!-- PARAMETROS -->
+	<definition name="page.calendario.comercial" extends="page">
+		<put name="conteudo" value="/paginas/calendario/comercial/calendarioComercial.jsp" />  
+	</definition>	
+
+	<definition name="page.calendario.bonus" extends="page">
+		<put name="conteudo" value="/paginas/calendario/bonus/calendarioBonus.jsp" />  
+	</definition>	
+
+	<definition name="page.filial" extends="page">
+		<put name="conteudo" value="/paginas/filial/filial.jsp" />  
+	</definition>
+	<definition name="page.agrupaFilialRemVar" extends="page">
+		<put name="conteudo" value="/paginas/filial/agrupaFilialUsuario.jsp" />  
+	</definition>
+	<definition name="page.novaFilial" extends="page">
+		<put name="conteudo" value="/paginas/filial/novaFilial.jsp" />  
+	</definition>
+	
+	<definition name="page.tipoFilial" extends="page">
+		<put name="conteudo" value="/paginas/tipoFilial/tipoFilial.jsp" />  
+	</definition>
+	<definition name="page.gerente.filial" extends="page">
+		<put name="conteudo" value="/paginas/gerenteFilial/gerenteFilial.jsp" />  
+	</definition>
+	<definition name="page.classeHay" extends="page">
+		<put name="conteudo" value="/paginas/classeHay/classeHay.jsp" />  
+	</definition>
+	<definition name="page.cargo" extends="page">
+		<put name="conteudo" value="/paginas/cargo/cargo.jsp" />  
+	</definition>	
+	<definition name="page.indicador" extends="page">
+		<put name="conteudo" value="/paginas/indicador/indicador.jsp" />  
+	</definition>	
+	<definition name="page.metaFilial" extends="page">
+		<put name="conteudo" value="/paginas/meta/metaFilial.jsp" />  
+	</definition>
+	<definition name="page.metaLider" extends="page">
+		<put name="conteudo" value="/paginas/meta/metaLider.jsp" />  
+	</definition>
+	<definition name="page.hierarquia" extends="page">
+		<put name="conteudo" value="/paginas/funcionario/hierarquia.jsp" />  
+	</definition>
+	<definition name="page.acompMetaFilial" extends="page">
+		<put name="conteudo" value="/paginas/meta/acompMetaFilial.jsp" />  
+	</definition>
+	<definition name="page.metaFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/meta/metaFuncionario.jsp" />  
+	</definition>
+	<definition name="page.escala" extends="page">
+		<put name="conteudo" value="/paginas/escala/escala.jsp" />  
+	</definition>	
+	<definition name="page.faixaEscala" extends="page">
+		<put name="conteudo" value="/paginas/escala/faixaEscala.jsp" />  
+	</definition>	
+	<definition name="page.ponderacao" extends="page">
+		<put name="conteudo" value="/paginas/ponderacao/ponderacao.jsp" />  
+	</definition>
+	<definition name="page.salarioBase" extends="page">
+		<put name="conteudo" value="/paginas/funcionario/salarioBase.jsp" />  
+	</definition>	
+	<definition name="page.agrupaFilial" extends="page">
+		<put name="conteudo" value="/paginas/funcionario/agrupaFilial.jsp" />  
+	</definition>	
+	<definition name="page.crudFuncionario" extends="page">
+		<put name="conteudo" value="/paginas/funcionario/crudFuncionario.jsp" />  
+	</definition>	
+	<definition name="page.processoPeriodo" extends="page">
+		<put name="conteudo" value="/paginas/processo/processoPeriodo.jsp" />  
+	</definition>
+	<definition name="page.geraProcesso" extends="page">
+		<put name="conteudo" value="/paginas/processo/geraProcesso.jsp" />  
+	</definition>
+	<definition name="page.agendamentoCarga" extends="page">
+		<put name="conteudo" value="/paginas/carga/agendamentoCarga.jsp" />  
+	</definition>
+	<definition name="page.resultadoLoja" extends="page">
+		<put name="conteudo" value="/paginas/resultadoLoja/consultaResultado.jsp" />  
+	</definition>
+	<definition name="page.realizFilialIndic" extends="page">
+		<put name="conteudo" value="/paginas/realizFilialIndic/realizFilialIndic.jsp" />  
+	</definition>
+	<definition name="page.tlmkt" extends="page">
+		<put name="conteudo" value="/paginas/tlmkt/telemarketing.jsp" />  
+	</definition>	
+	<definition name="page.configuracaoBonus" extends="page">
+		<put name="conteudo" value="/paginas/configuracaoBonus/configuracaoBonus.jsp" />
+	</definition>
+
+</tiles-definitions>

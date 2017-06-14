@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+
+    <!--
+        ================================================ Form Bean Definitions
+    -->
+    <form-beans>
+        <form-bean name="form" type="br.com.marisa.srv.struts.form.GenericForm" />
+    </form-beans>
+    <!--
+        ================================================ Global Exception Definitions
+    -->
+    <global-exceptions>
+    </global-exceptions>
+ 
+    <!--
+        ================================================ Global Forward Definitions
+    -->
+    <global-forwards>
+        <forward name="principal" 	 path="/principal.do?operacao=iniciarSistema" />
+        <forward name="login" 		 redirect="true"  path="page.login" />
+        <forward name="sucesso" 	 redirect="true"  path="page.sucesso" />
+        <forward name="aviso" 		 redirect="false" path="page.aviso" />
+        <forward name="erro" 		 redirect="false" path="page.erro" />
+        <forward name="erroContexto" redirect="false" path="/paginas/erro/errorContexto.jsp" />   
+    </global-forwards>
+    <!--
+        ================================================ Action Mapping Definitions
+    -->
+    <action-mappings>
+
+
+        <action parameter="operacao" path="/principal" scope="request" type="br.com.marisa.srv.geral.action.PrincipalAction" validate="false">
+            <forward name="login" redirect="true" path="page.login" />
+        </action>
+        <action parameter="operacao" path="/login" scope="request" type="br.com.marisa.srv.login.action.LoginAction" validate="false">
+            <forward name="inicio" redirect="true" path="page.inicial" />
+            <forward name="alteracaoSenha" redirect="true" path="page.alteracaoSenha" />
+        </action>        
+        
+        <action parameter="operacao" path="/relatorioLoja" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioLojaAction" validate="false">
+            <forward name="paginaInicial" redirect="true" path="/relatorioLoja.do?operacao=inicio" />
+            <forward name="relatorio" redirect="true" path="page.relatorioLoja" />
+        </action>
+        <action parameter="operacao" path="/relatorioCallCenter" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioCallCenterAction" validate="false">
+            <forward name="paginaInicial" redirect="true" path="/relatorioCallCenter.do?operacao=inicio" />
+            <forward name="relatorio" redirect="true" path="page.relatorioCallCenter" />
+        </action>
+        <action parameter="operacao" path="/relatorioCallCenterRealizado" scope="request" type="br.com.marisa.srv.relatorio.callcenter.action.RelatorioCallCenterRealizadoAction" validate="false">
+            <forward name="paginaInicial" redirect="true" path="/relatorioCallCenterRealizado.do?operacao=inicio" />
+            <forward name="relatorio" redirect="true" path="page.relatorioCallCenterRealizado" />
+        </action>
+        <action parameter="operacao" path="/relatorioSax" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioSaxAction" validate="false">
+            <forward name="paginaInicial" redirect="true" path="/relatorioSax.do?operacao=inicio" />
+            <forward name="relatorio" redirect="true" path="page.relatorioSax" />
+        </action>
+        <action parameter="operacao" path="/relatorioCampanha" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioCampanhaAction" validate="false">
+            <forward name="relatorio" redirect="true" path="page.relatorioCampanha" />
+        </action>
+        <action parameter="operacao" path="/relatorioVm" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioVmAction" validate="false">
+            <forward name="relatorio" redirect="true" path="page.relatorioVm" />
+        </action>
+        <action parameter="operacao" path="/hierarquia" scope="request" type="br.com.marisa.srv.funcionario.action.HierarquiaAction" validate="false">
+            <forward name="paginaInicial" redirect="true" path="page.hierarquia" />
+        </action>
+        
+        <action parameter="operacao" path="/relatorioLogProcesso" scope="request" type="br.com.marisa.srv.log.action.LogProcessoAction" validate="false">
+            <forward name="logProcesso" redirect="true" path="page.logProcesso" />
+            <forward name="paginaInicial" redirect="true" path="/relatorioLogProcesso.do?operacao=inicio" />
+        </action>
+        
+        <action parameter="operacao" path="/relatorioBonusStatus" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioBonusStatusAction" validate="false">
+            <forward name="relatorio"   redirect="true" path="page.relatorioBonusStatus" />
+            <forward name="paginaInicial" redirect="true" path="/relatorioBonusStatus.do?operacao=inicio" />
+        </action>
+       
+        <action parameter="operacao" path="/usuario" scope="request" type="br.com.marisa.srv.usuario.action.UsuarioAction" validate="false">
+            <forward name="usuario" redirect="true" path="page.usuario" />
+            <forward name="paginaInicial" redirect="true" path="/usuario.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/perfil" scope="request" type="br.com.marisa.srv.perfil.action.PerfilAction" validate="false">
+            <forward name="perfil" redirect="true" path="page.perfil" />
+            <forward name="paginaInicial" redirect="true" path="/perfil.do?operacao=inicio" />
+        </action>
+        
+        <action parameter="operacao" path="/calendarioComercial" scope="request" type="br.com.marisa.srv.calendario.action.CalendarioComercialAction" validate="false">
+            <forward name="calendarioComercial" redirect="true" path="page.calendario.comercial" />
+            <forward name="paginaInicial" redirect="true" path="/calendarioComercial.do?operacao=inicio" />
+        </action>
+
+        <action parameter="operacao" path="/calendarioBonus" scope="request" type="br.com.marisa.srv.calendario.action.CalendarioBonusAction" validate="false">
+            <forward name="calendarioBonus" redirect="true" path="page.calendario.bonus" />
+            <forward name="paginaInicial" redirect="true" path="/calendarioBonus.do?operacao=inicio" />
+        </action>
+        
+        <action parameter="operacao" path="/filial" scope="request" type="br.com.marisa.srv.filial.action.FilialAction" validate="false">
+            <forward name="filial" redirect="true" path="page.filial" />
+            <forward name="paginaInicial" redirect="true" path="/filial.do?operacao=inicio" />
+        </action>
+        
+        <action parameter="operacao" path="/tipoFilial" scope="request" type="br.com.marisa.srv.filial.action.TipoFilialAction" validate="false">
+            <forward name="tipoFilial" redirect="true" path="page.tipoFilial" />
+            <forward name="paginaInicial" redirect="true" path="/tipoFilial.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/gerenteFilial" scope="request" type="br.com.marisa.srv.gerente.filial.action.GerenteFilialAction" validate="false">
+        	<forward name="inicio" redirect="true" path="page.inicial" />
+            <forward name="gerenteFilial" redirect="true" path="page.gerente.filial" />
+            <forward name="paginaInicial" redirect="true" path="/gerenteFilial.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/classeHay" scope="request" type="br.com.marisa.srv.classehay.action.ClasseHayAction" validate="false">
+            <forward name="classeHay"     redirect="true" path="page.classeHay" />
+            <forward name="paginaInicial" redirect="true" path="/classeHay.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/cargo" scope="request" type="br.com.marisa.srv.cargo.action.CargoAction" validate="false">
+            <forward name="cargo"         redirect="true" path="page.cargo" />
+            <forward name="paginaInicial" redirect="true" path="/cargo.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/indicador" scope="request" type="br.com.marisa.srv.indicador.action.IndicadorAction" validate="false">
+            <forward name="indicador" redirect="true" path="page.indicador" />
+            <forward name="paginaInicial" redirect="true" path="/indicador.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/metaFilial" scope="request" type="br.com.marisa.srv.meta.action.MetaFilialAction" validate="false">
+            <forward name="metaFilial"     redirect="true" path="page.metaFilial" />
+            <forward name="paginaInicial"  redirect="true" path="/metaFilial.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/metaLider" scope="request" type="br.com.marisa.srv.meta.action.MetaLiderAction" validate="false">
+            <forward name="metaLider"     redirect="true" path="page.metaLider" />
+        </action>
+        <action parameter="operacao" path="/acompMetaFilial" scope="request" type="br.com.marisa.srv.meta.action.AcompMetaFilialAction" validate="false">
+            <forward name="acompMetaFilial" redirect="true" path="page.acompMetaFilial" />
+            <forward name="paginaInicial"   redirect="true" path="/acompMetaFilial.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/metaFuncionario" scope="request" type="br.com.marisa.srv.meta.action.MetaFuncionarioAction" validate="false">
+            <forward name="metaFuncionario" redirect="true" path="page.metaFuncionario" />
+            <forward name="paginaInicial"  	redirect="true" path="/metaFuncionario.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/escala" scope="request" type="br.com.marisa.srv.escala.action.EscalaAction" validate="false">
+            <forward name="escala" 			redirect="true" path="page.escala" />
+            <forward name="paginaInicial"  	redirect="true" path="/escala.do?operacao=inicio" />
+        </action>        
+        <action parameter="operacao" path="/faixaEscala" scope="request" type="br.com.marisa.srv.escala.action.FaixaEscalaAction" validate="false">
+            <forward name="faixaEscala" 	redirect="true" path="page.faixaEscala" />
+            <forward name="paginaInicial"  	redirect="true" path="/faixaEscala.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/ponderacao" scope="request" type="br.com.marisa.srv.ponderacao.action.PonderacaoAction" validate="false">
+            <forward name="ponderacao"     redirect="true" path="page.ponderacao" />
+            <forward name="paginaInicial"  redirect="true" path="/ponderacao.do?operacao=inicio" />
+            <forward name="inclusao"	   redirect="true" path="/ponderacao.do?operacao=inclusao" />
+        </action>
+        <action parameter="operacao" path="/salarioBase" scope="request" type="br.com.marisa.srv.funcionario.action.SalarioBaseAction" validate="false">
+            <forward name="salarioBase"    redirect="true" path="page.salarioBase" />
+            <forward name="paginaInicial"  redirect="true" path="/salarioBase.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/agrupaFilial" scope="request" type="br.com.marisa.srv.funcionario.action.AgrupaFilialAction" validate="false">
+            <forward name="agrupaFilial"    redirect="true" path="page.agrupaFilial" />
+            <forward name="paginaInicial"  redirect="true" path="/agrupaFilial.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/funcionario" scope="request" type="br.com.marisa.srv.funcionario.action.FuncionarioAction" validate="false">
+            <forward name="crudFuncionario"    redirect="true" path="page.crudFuncionario" />
+            <forward name="paginaInicial"  	   redirect="true" path="/funcionario.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/processoPeriodo" scope="request" type="br.com.marisa.srv.processo.action.ProcessoPeriodoAction" validate="false">
+            <forward name="processoPeriodo"    redirect="true" path="page.processoPeriodo" />
+            <forward name="geraProcesso"	   redirect="true" path="page.geraProcesso" />
+            <forward name="paginaInicial"  	   redirect="true" path="/processoPeriodo.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/digitalizado" scope="request" type="br.com.marisa.srv.digitalizado.action.DigitalizadoAction" validate="false">
+            <forward name="paginaInicial" redirect="true" path="page.digitalizado" />
+        </action>
+        <action parameter="operacao" path="/ajusteFuncionario" scope="request" type="br.com.marisa.srv.ajuste.action.AjusteFuncionarioAction" validate="false">
+            <forward name="paginaInicial" redirect="true" path="page.ajusteFuncionario" />
+            <forward name="detalheAjuste" redirect="true" path="page.detalheAjusteFuncionario" />
+        </action>
+        <action parameter="operacao" path="/indicadorRelatorios" scope="request" type="br.com.marisa.srv.indicador.action.IndicadorRelatoriosAction" validate="false">
+            <forward name="indicador" redirect="true" path="page.indicadores" />
+        </action>
+        <action parameter="operacao" path="/extratoFuncionario" scope="request" type="br.com.marisa.srv.funcionario.action.ExtratoFuncionarioAction" validate="false">
+            <forward name="funcionario" 	   redirect="true" path="page.funcionario" />
+            <forward name="extratoFuncionario" redirect="true" path="page.extratoFuncionario" />
+        </action>
+        <action parameter="operacao" path="/bonus" scope="request" type="br.com.marisa.srv.funcionario.action.ExtratoFuncionarioBonusAction" validate="false">
+            <forward name="funcionario" 	   redirect="true" path="page.bonusFuncionario" />
+            <forward name="extratoFuncionario" redirect="true" path="page.bonusExtratoFuncionario" />
+            <forward name="paginaInicial" redirect="true" path="/bonus.do?operacao=pesquisaExtratoFuncionario" />
+        </action>
+        <action parameter="operacao" path="/bonusAnualFuncionario" scope="request" type="br.com.marisa.srv.funcionario.action.FuncionarioBonusAnualAction" validate="false">
+            <forward name="funcionario" redirect="true" path="page.bonusAnualFuncionario" />
+            <forward name="indicadorFuncionario" redirect="true" path="page.bonusAnualIndicadorFuncionario" />
+            <forward name="indicadorFuncionarioSimulacao" redirect="true" path="page.bonusAnualIndicadorFuncionarioSimulacao" />
+            <forward name="paginaInicial" redirect="true" path="/bonusAnualFuncionario.do?operacao=pesquisaIndicadorFuncionario" />
+        </action>
+        <action parameter="operacao" path="/cargoBonus" scope="request" type="br.com.marisa.srv.cargo.action.CargoBonusAction" validate="false">
+            <forward name="cargo" 	      redirect="true" path="page.cargoBonus" />
+            <forward name="paginaInicial" redirect="true" path="/cargoBonus.do?operacao=inicio" />
+        </action>    
+        <action parameter="operacao" path="/allPageBonus" scope="request" type="br.com.marisa.srv.funcionario.action.AllPageBonusAction" validate="false">
+            <forward name="pagamento" redirect="true" 	path="page.pagamentoBonus" />
+            <forward name="conferecia" redirect="true" 	path="page.conferenciaBonus" />
+            <forward name="desempenho" redirect="true" 	path="page.desempenhoBonus" />
+             <forward name="paginaInicial" redirect="true" path="/allPageBonus?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/grupoRemVarBonus" scope="request" type="br.com.marisa.srv.gpremuneracaovariavel.action.GrupoRemVarBonusAction" validate="false">
+            <forward name="grupoRemVar"    redirect="true" path="page.grupoRemVarBonus" />
+            <forward name="paginaInicial"  redirect="true" path="/grupoRemVarBonus.do?operacao=inicio" />
+        </action>    
+        <action parameter="operacao" path="/agendamentoCarga" scope="request" type="br.com.marisa.srv.agendamento.action.AgendamentoCargaAction" validate="false">
+            <forward name="agendamento" 	redirect="true" path="page.agendamentoCarga" />
+            <forward name="paginaInicial"  	redirect="true" path="/agendamentoCarga.do?operacao=inicio" />
+        </action>    
+        <action parameter="operacao" path="/agrupaFilialRemVar" scope="request" type="br.com.marisa.srv.filial.action.AgrupaFilialUsuarioAction" validate="false">
+            <forward name="agrupaFilialRemVar" redirect="true" path="page.agrupaFilialRemVar" />
+        </action>    
+        <action parameter="operacao" path="/resultadoLoja" scope="request" type="br.com.marisa.srv.resultado.loja.action.ResultadoLojaAction" validate="false">
+            <forward name="resultadoLoja" redirect="true" path="page.resultadoLoja" />
+        </action>
+        <action parameter="operacao" path="/realizFilialIndic" scope="request" type="br.com.marisa.srv.filial.realizado.action.RealizadoFilialIndicAction" validate="false">
+            <forward name="paginaInicial" redirect="true" path="page.realizFilialIndic" />
+        </action>
+        <action parameter="operacao" path="/telemarketing" scope="request" type="br.com.marisa.srv.tlmkt.action.TelemarketingAction" validate="false">
+            <forward name="telemarketing" redirect="true" path="page.tlmkt" />
+            <forward name="paginaInicial" redirect="true" path="/telemarketing.do?operacao=inicio" />
+        </action>
+        <action parameter="operacao" path="/configuracaoBonus" scope="request" type="br.com.marisa.srv.bonus.configuracao.action.ConfiguracaoBonusAction" validate="false">
+            <forward name="configuracaoBonus" redirect="true" path="page.configuracaoBonus" />
+            <forward name="paginaInicial" redirect="true" path="/configuracaoBonus.do?operacao=inicio" />
+        </action>
+
+ <!-- Novos relatorios -->
+
+        <action parameter="operacao" path="/relatorioDinamico" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioDinamicoAction" validate="false">
+            <forward name="relatorioDinamico" redirect="true" path="page.relatorioDinamico" />
+            <forward name="paginaInicial" redirect="true" path="/relatorioDinamico.do?operacao=inicio" />
+        </action>
+
+        <action parameter="operacao" 						path="/relatorioBonusPagamento" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioBonusPagamentoAction" validate="false">
+             <forward name="relatorio"   	redirect="true" path="page.relatorioBonusPagamento" />
+            <forward name="paginaInicial"  	redirect="true" path="/relatorioBonusPagamento.do?operacao=inicio" />
+       	</action>
+        
+        <action parameter="operacao" 						path="/relatorioBonusConferencia" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioBonusConferenciaAction" validate="false">
+             <forward name="relatorio"   	redirect="true" path="page.relatorioBonusConferencia" />
+            <forward name="paginaInicial"  	redirect="true" path="/relatorioBonusConferencia.do?operacao=inicio" />
+       	</action>
+
+        <action parameter="operacao" 						path="/relatorioDesempenhoColaborador" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioBonusDesempenhoColaboradorAction" validate="false">
+             <forward name="relatorio"   	redirect="true" path="page.relatorioDesempenhoColaborador" />
+            <forward name="paginaInicial"  	redirect="true" path="/relatorioDesempenhoColaborador.do?operacao=inicio" />
+       	</action>
+           
+           
+        <action parameter="operacao" 						path="/relatorioBonusPagamentoProporcionalidade" scope="request" type="br.com.marisa.srv.relatorio.action.RelatorioBonusPagamentoProporcionalidadeAction" validate="false">
+             <forward name="relatorio"   	redirect="true" path="page.relatorioBonusPagamentoProporcionalidade" />
+            <forward name="paginaInicial"  	redirect="true" path="/relatorioBonusPagamentoProporcionalidade.do?operacao=inicio" />
+       	</action>                
+        
+    </action-mappings> 
+
+    <!--
+        ================================================ Message Resources Definitions
+    -->
+    <message-resources parameter="ApplicationResources" />
+
+    <!--
+        ================================================ Plug Ins Configuration
+    -->
+
+    <!--
+        ================================================ Tiles plugin
+    -->
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="definitions-parser-validate" value="false" />
+    </plug-in>
+
+</struts-config>
